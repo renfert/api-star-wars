@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "19b9c3b5-92d7-488e-82d0-a88ee830833b",
+		"name": "aws-test Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2852292"
+	},
+	"item": [
+		{
+			"name": "getSFromswapiIfexist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ssss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bpuop3x5mk.execute-api.us-east-1.amazonaws.com/dev/planets/1",
+					"protocol": "https",
+					"host": [
+						"bpuop3x5mk",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"planets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Venus 4\",\r\n    \"diameter\": \"10465\",\r\n    \"gravity\": \"1 standard\",\r\n    \"orbital_period\": \"304\",\r\n    \"population\": \"200000\",\r\n    \"residents\": [\r\n        \"https://swapi.py4e.com/api/people/1/\",\r\n        \"https://swapi.py4e.com/api/people/2/\"\r\n    ],\r\n    \"rotation_period\": \"23\",\r\n    \"surface_water\": \"1\",\r\n    \"terrain\": \"Dessert\",\r\n    \"url\": \"https://swapi.py4e.com/api/planets/1/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bpuop3x5mk.execute-api.us-east-1.amazonaws.com/dev/planets/102",
+					"protocol": "https",
+					"host": [
+						"bpuop3x5mk",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"planets",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNewsElements",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ocxrejshu7.execute-api.us-east-1.amazonaws.com/dev/historicos/1",
+					"protocol": "https",
+					"host": [
+						"ocxrejshu7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"historicos",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://ocxrejshu7.execute-api.us-east-1.amazonaws.com/dev/hello Copy 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ocxrejshu7.execute-api.us-east-1.amazonaws.com/dev/historicos/1",
+							"protocol": "https",
+							"host": [
+								"ocxrejshu7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"historicos",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Feb 2024 03:40:44 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "11b60937-c057-4165-b6f9-f30af7f12740"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "S2W9VGQmIAMEtEQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-65c59ebb-6ea617b4304421c943bcbb2a;Parent=63273b14387d8b1d;Sampled=0;lineage=6e653fbf:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 61bf5cdcb798726dc6c606f907cc8f54.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "LIM50-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "hzvoodYxa6Gr7HJrtUUIiPLip-nfk48Y2bvLykOKwfavCQ-5jk9Jvw=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"fechaActualizacion\": \"2024-02-09T01:21:09.000Z\",\n            \"sueldoAnterior\": 250,\n            \"sueldoNuevo\": 240\n        },\n        {\n            \"fechaActualizacion\": \"2024-02-09T01:22:24.000Z\",\n            \"sueldoAnterior\": 250,\n            \"sueldoNuevo\": 240\n        }\n    ],\n    \"statusCode\": 200\n}"
+				}
+			]
+		}
+	]
+}
