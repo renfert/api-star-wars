@@ -1,17 +1,29 @@
 import 'source-map-support/register';
-
 import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/apiGateway';
 import { formatJSONResponse } from '@libs/apiGateway';
 import { middyfy } from '@libs/lambda';
-
+import Ajv from 'ajv';
 import schema from './schema';
 import { IResponseApi } from 'src/application/interfaces/response-controller-interface';
 import HistoricoController from 'src/application/controllers/historico-controller';
 import { IPlanet } from 'src/application/interfaces/historico-interface';
 
-const historicoController = new HistoricoController()
+const historicoController = new HistoricoController();
+
+const ajv = new Ajv();
+const validate = ajv.compile(schema);
 
 const savePlanet: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
+  // Validate the request body against the schema
+  const isValid = validate(event.body);
+  if (!isValid) {
+    const validationErrors = validate.errors?.map((error) => (       
+      { 
+        instancePath: error.instancePath,     
+        message: error.message,
+    }));
+    return formatJSONResponse(400, { message: "schema error", data: validationErrors, success:false });
+  }
 
   let planet: IPlanet = {
     name: event.body.name as String,
@@ -27,17 +39,16 @@ const savePlanet: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (eve
     terrain: event.body.terrain as String,
     created: new Date(),
     updated: new Date(),
-  }
-
+  };
 
   const planetId = +event.pathParameters.planetId;
 
-  const response:IResponseApi = await historicoController.savePlanet(
+  const response: IResponseApi = await historicoController.savePlanet(
     planetId,
     planet
-  )
+  );
 
   return formatJSONResponse(response.statusCode, response);
-}
+};
 
 export const main = middyfy(savePlanet);

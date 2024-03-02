@@ -1,4 +1,3 @@
-///import schema from './schema';
 import { handlerPath } from '@libs/handlerResolver';
 
 export default {
@@ -8,7 +7,6 @@ export default {
       http: {
         method: 'post',
         path: 'planets/{planetId}',
-
       }
     }
   ]

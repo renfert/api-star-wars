@@ -1,4 +1,4 @@
-
+ 
 import { IPlanetQuery } from 'src/infraestruture/interfaces/response-query-interface';
 import HistoricoQuery from 'src/infraestruture/repositories/historico-query';
 import {  IPlanet } from '../interfaces/historico-interface';
@@ -17,20 +17,18 @@ class HistoricoAdapter implements IPlanetMethod {
 
         if(!query.Item)
             return null;
-        return query.Item;
-        return query.Item.historico.L.map(item => {
-            const { name, climate, diameter, gravity,orbital_period,population,residents, rotation_period, surface_water } = item.M;
+        return query.Item.data.L.map(item => {
+            const { nombre, climate, diameter, gravity,orbital_period,population,terrain, rotation_period, surface_water } = item.M;
             return {
-                nombre: name.S,
+                nombre: nombre.S,
                 clima: climate.S,
                 diametro: diameter.N,
                 gravedad: gravity.N,
                 periodo_orbital: orbital_period.N,
                 poblacion : population.N,
-                residentes: residents,
-                periodo_rotacion : rotation_period,
-                superficie_agua: surface_water,
-                terrain: 'terreno',
+                periodo_rotacion : rotation_period.N,
+                superficie_agua: surface_water.N,
+                terrain: terrain.S,
                 url: 'url',
                 created: 'creado',
                 edited: 'editado',
